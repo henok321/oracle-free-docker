@@ -63,7 +63,7 @@ docker-compose up -d
 ### Connect with sqlplus
 
 ```bash
-docker exec -it oracle-local bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
+docker exec -it oracle-local bash -c "sqlplus /nolog"
 ```
 
 ### Login as sysdba
@@ -82,6 +82,7 @@ grant connect,
 grant create session to testuser;
 grant unlimited tablespace to testuser;
 grant db_developer_role to testuser;
+grant execute on dbms_debug_jdwp to testuser;
 ```
 
 ### Delete user
