@@ -1,4 +1,4 @@
-# Oracle Free docker container on M1 Mac (ARM)
+# Oracle Databse Free docker container on M1 Mac (ARM)
 
 Oracle does not provide a native M1 Mac version of their docker image. We will use the offical [Oracle Database Free](https://www.oracle.com/database/free/get-started/) that only provides docker images build for `linux/amd64`.
 
