@@ -52,6 +52,12 @@ docker context use colima
 docker run -d --name oracle-local -p 1521:1521 container-registry.oracle.com/database/free:latest
 ```
 
+or use the `docker-compose.yml` file
+
+```bash
+docker-compose up -d
+```
+
 ## Connect to database
 
 ### Connect with sqlplus
