@@ -6,3 +6,5 @@ services:
     container_name: oracle-local
     ports:
       - "1521:1521"
+      - "4000:4000"
+      - "5500:5500"
