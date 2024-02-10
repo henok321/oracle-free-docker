@@ -10,45 +10,57 @@ If you are using an Intel Mac or linux you can skip the colima setup and use the
 
 ### Install
 
-```bash
+```sh
 brew install colima
 ```
 
 ### Start
 
-```bash
-colima start --arch x86_64 --memory 4
+I use the profile name `oracle` otherwise you can use any name you like or none at all. Then colima will use the default profile.
+
+```sh
+colima start -p oracle -c 4 -m 12 -a x86_64
 ```
 
 ### Stop
 
-```bash
-colima stop
+```sh
+colima stop oracle
 ```
 
 ### Remove
 
-```bash
-colima delete
+```sh
+colima delete oracle
 ```
 
 ## Start docker container
 
 ### Use the colima context that is will be started by colima
 
-```bash
-docker context use colima
+If you use a custom profile name, it will be extended to the docker context name.
+
+```sh
+docker context use colima-oracle
 ```
 
 ### Start the container
 
-```bash
+The oracle registry requires a login. You can use your oracle account to login.
+
+```sh
+docker login container-registry-frankfurt.oracle.com
+```
+
+I use an european registry mirror to speed up the download. You can ajust the mirror to your location when logging in and also in the `docker-compose.yml` file. The download speed is still slow, but for me it is faster than the original registry.
+
+```sh
 docker run -d --name oracle-local -p 1521:1521 container-registry.oracle.com/database/free:latest
 ```
 
 or use the `docker-compose.yml` file
 
-```bash
+```sh
 docker-compose up -d
 ```
 
@@ -56,7 +68,7 @@ docker-compose up -d
 
 ### Connect with sqlplus
 
-```bash
+```sh
 docker exec -it oracle-local bash -c "sqlplus /nolog"
 ```
 
@@ -87,7 +99,7 @@ drop user testuser cascade;
 
 ### Connect with user
 
-```bash
+```sh
 docker exec -it oracle-local bash -c "source /home/oracle/.bashrc; sqlplus testuser/testuser"
 ```
 
