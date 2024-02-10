@@ -57,7 +57,7 @@ I use an european registry mirror to speed up the download. You can ajust the mi
 You can find the available mirrors [here](https://container-registry.oracle.com/ords/f?p=113:4:115171556949609:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:1863,1863,Oracle%20Database%20Free,Oracle%20Database%20Free,1,0&cs=3JyAdVxIawr9fT4F7YWpK0QA05Gsm3-w7PzYjFJJRwXB6DrJlJ3BbkurEz8TkbTwMWAOldBcKNn07BbVLOKer8w). Scroll down to the end of the page and you will find the mirrors.
 
 ```sh
-docker run -d --name oracle-local -p 1521:1521 container-registry.oracle.com/database/free:latest
+docker run -d --name oracle-local -p 1521:1521 container-registry-frankfurt.oracle.com/database/free:latest
 ```
 
 or use the `docker-compose.yml` file
