@@ -17,7 +17,7 @@ brew install colima
 ### Start
 
 ```bash
-colima start --arch x86_64 --vm-type=vz --vz-rosetta --mount-type virtiofs --memory 4
+colima start --arch x86_64 --memory 4
 ```
 
 ### Stop
