@@ -16,10 +16,10 @@ brew install colima
 
 ### Start
 
-I use the profile name `oracle` otherwise you can use any name you like or none at all. Then colima will use the default profile.
+I use the profile name `oracle` otherwise you can use any name you like or none at all. Then colima will use the default profile. Ajust the number of CPUs `-c` and memory `-m` to your requirements.
 
 ```sh
-colima start -p oracle -c 4 -m 12 -a x86_64
+colima start -p oracle -c 4 -m 8 -a x86_64
 ```
 
 ### Stop
